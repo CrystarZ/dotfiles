@@ -29,7 +29,7 @@ export _dfs_="$HOME/DotFiles/"
 export _rws_="$HOME/_EVOLINK_/"
 export _ws_="$HOME/WorkSpace/"
 export _configs_="$HOME/.config/"
-export _themes_="${_rws_}Themes/oneiroi-theme/"
+export _themes_="${_rws_}Themes/oneiroi-theme/packages"
 export POSH_DISABLE_UPDATE=true
 
 #proxy
