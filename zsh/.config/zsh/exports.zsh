@@ -32,6 +32,11 @@ export _configs_="$HOME/.config/"
 export _themes_="${_rws_}Themes/oneiroi-theme/"
 export POSH_DISABLE_UPDATE=true
 
+#proxy
+host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+export http_proxy="http://$host_ip:7890"
+export https_proxy="http://$host_ip:7890"
+
 case "$(uname -s)" in
 
 Darwin)
