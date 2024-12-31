@@ -1,0 +1,8 @@
+[user]
+	email = crystar.z@proton.me
+	name = AEva
+
+[core]
+	editor = nvim
+[color]
+	ui = true
