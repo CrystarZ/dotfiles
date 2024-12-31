@@ -37,4 +37,4 @@ alias :q="exit"
 
 #ENVARS
 
-eval "$(oh-my-posh init zsh --config ${_themes_}packages/oh-my-posh/oneiroi.omp.json)"
+eval "$(oh-my-posh init zsh --config ${_themes_}/oh-my-posh/oneiroi.omp.json)"
