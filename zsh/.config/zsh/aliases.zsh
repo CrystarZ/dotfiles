@@ -18,7 +18,8 @@ alias du='ncdu' #yazi
 alias tree='eza --tree --icons'
 alias find='fd --hidden --follow --color=auto'
 #alias cut='choose'
-alias man='tldr --pager=less'
+alias man='man -L zh_CN'
+alias mian='tldr' #mini-man
 alias ps='procs --color=auto'
 alias curl='curlie --color=auto'
 alias vim='nvim'
