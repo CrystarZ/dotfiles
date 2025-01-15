@@ -38,3 +38,17 @@ alias :q="exit"
 #ENVARS
 
 eval "$(oh-my-posh init zsh --config ${_themes_}/oh-my-posh/oneiroi.omp.json)"
+
+# >>> conda initialize >>>
+export CONDA_HOME="$HOME/miniconda3/"
+
+ci() {
+    if [ -f "$CONDA_HOME/etc/profile.d/conda.sh" ]; then
+        . "$CONDA_HOME/etc/profile.d/conda.sh"
+        export CONDA_PROMPT_MODIFIER="($CONDA_DEFAULT_ENV)"
+    else
+        export PATH="$CONDA_HOME/bin:$PATH"
+    fi
+    echo "$(tput setaf 10)Conda环境已初始化，使用conda activate {env}激活$(tput sgr0)"
+}
+# <<< conda initialize <<<
