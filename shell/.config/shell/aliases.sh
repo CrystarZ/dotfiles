@@ -3,7 +3,10 @@
 #alias f='zi'
 alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+alias dfrc='${EDITOR} $_dfs_'
+alias thmrc='${EDITOR} $_themes_'
 alias nvimrc='${EDITOR} ~/.config/nvim/'
+alias shrc='${EDITOR} ~/.config/shell/'
 alias zshrc='${EDITOR} ~/.zshrc'
 #alias sshk="kitty +kitten ssh"
 # alias lvim="env TERM=wezterm lvim"
@@ -53,11 +56,9 @@ case "$(uname -s)" in
 
 Darwin)
 	# echo 'Mac OS X'
-	alias ls='ls -G'
 	;;
 
 Linux)
-	alias ls='ls --color=auto'
 	;;
 
 CYGWIN* | MINGW32* | MSYS* | MINGW*)
