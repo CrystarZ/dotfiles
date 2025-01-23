@@ -9,6 +9,7 @@ flag_mode_aliases=$true
 flag_mode_exports=$true
 flag_mode_functions=$true
 var_shell=$(basename $(readlink /proc/$$/exe))
+var_theme="dream"
 var_prompt="starship"
 
 help() {
@@ -19,6 +20,8 @@ help() {
   echo "      SHELL = bash|zsh"
   echo "  -P, --prompt      <PROMPT>          default = starship"
   echo "      PROMPT = empty|omp|starship"
+  echo "  -T, --theme       <THEME>           default = dream"
+  echo "      THEME = dream|melatonin"
   echo "  -C, --conda                         start with condainit"
   echo "  --disable_aliases                   not load aliases.sh"
   echo "  --disable_exports                   not load exports.sh"
@@ -26,7 +29,7 @@ help() {
 }
 
 #参数提取
-ARGS=$(getopt -o hs:P:C -l help,shell:,prompt:,conda,disable_aliases,disable_exports,disable_functions -n "$0" -- "$@")
+ARGS=$(getopt -o hs:P:T:C -l help,shell:,prompt:,theme:,conda,disable_aliases,disable_exports,disable_functions -n "$0" -- "$@")
 if [[ $? != 0 ]]; then
   echo "Error parsing arguments"
   exit $false
@@ -52,6 +55,10 @@ while true; do
     ;;
   -P | --prompt)
     var_prompt=$(copt $2 $var_prompt)
+    shift 2
+    ;;
+  -T | --theme)
+    var_theme=$(copt $2 $var_theme)
     shift 2
     ;;
   -C | --conda)
@@ -90,7 +97,9 @@ done
 #ENVARS
 # >>> prompt initialize >>>
 export POSH_DISABLE_UPDATE=true
-[[ $var_prompt == "omp" ]] && eval "$(oh-my-posh init $var_shell --config ${_themes_}/oh-my-posh/oneiroi.omp.json)"
+[[ $var_prompt == "omp" ]] && eval "$(oh-my-posh init $var_shell --config ${_themes_}/oh-my-posh/oneiroi-${var_theme}.omp.json)"
+
+export STARSHIP_CONFIG=${_themes_}/starship/oneiroi-${var_theme}.toml
 [[ $var_prompt == "starship" ]] && eval "$(starship init $var_shell)"
 # <<< prompt initialize <<<
 
