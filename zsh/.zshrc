@@ -12,7 +12,7 @@ plug "esc/conda-zsh-completion"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
-plug "zap-zsh/vim"
+# plug "zap-zsh/vim"
 # plug "zap-zsh/zap-prompt"
 # plug "zap-zsh/atmachine" 
 plug "zap-zsh/fzf"
@@ -23,12 +23,14 @@ plug "zsh-users/zsh-history-substring-search"
 # keybinds
 bindkey '^ ' autosuggest-accept
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey '^K' history-substring-search-up
+bindkey '^J' history-substring-search-down
+bindkey '^L' autosuggest-accept
 
+# bindkey '^I' vi-cmd-mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 alias :q="exit"
 
-set -- --shell zsh --prompt starship
+set -- --shell zsh --prompt omp --theme dream
 source "$HOME/.config/shell/init.sh"
