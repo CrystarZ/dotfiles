@@ -1,109 +1,33 @@
 #!/bin/sh
 
-#params
-false=1
-true=0
-flag_help=$false
-flag_conda=$false
-flag_mode_aliases=$true
-flag_mode_exports=$true
-flag_mode_functions=$true
-var_shell=$(basename $(readlink /proc/$$/exe))
-var_theme="dream"
-var_prompt="starship"
+export SHENV_SHELL=${SHENV_SHELL:=$(basename $(readlink /proc/$$/exe))} #shell = bash|zsh
+export SHENV_THEME=${SHENV_THEME:="oneiroi-dream"}                      #theme = oneiroi-dream|oneiroi-melatonin
+export SHENV_PROMPT=${SHENV_PROMPT:="starship"}                         #prompt = none|omp|starship"
 
-help() {
-  echo "Usage $0 [options]"
-  echo "Options:"
-  echo "  -h, --help                          Show this help message"
-  echo "  -s, --shell       <SHELL>           default = basename $(readlink /proc/$$/exe)"
-  echo "      SHELL = bash|zsh"
-  echo "  -P, --prompt      <PROMPT>          default = starship"
-  echo "      PROMPT = empty|omp|starship"
-  echo "  -T, --theme       <THEME>           default = dream"
-  echo "      THEME = dream|melatonin"
-  echo "  -C, --conda                         start with condainit"
-  echo "  --disable_aliases                   not load aliases.sh"
-  echo "  --disable_exports                   not load exports.sh"
-  echo "  --disavle_functions                 not load functions.sh"
-}
-
-#参数提取
-ARGS=$(getopt -o hs:P:T:C -l help,shell:,prompt:,theme:,conda,disable_aliases,disable_exports,disable_functions -n "$0" -- "$@")
-if [[ $? != 0 ]]; then
-  echo "Error parsing arguments"
-  exit $false
-fi
-eval set -- "$ARGS"
-
-copt() {
-  local value="$1"
-  local default="$2"
-  echo "${value:-$default}"
-  return $true
-}
-
-while true; do
-  case "$1" in
-  -h | --help)
-    flag_help=$true
-    shift
-    ;;
-  -s | --shell)
-    var_shell=$(copt $2 $var_shell)
-    shift 2
-    ;;
-  -P | --prompt)
-    var_prompt=$(copt $2 $var_prompt)
-    shift 2
-    ;;
-  -T | --theme)
-    var_theme=$(copt $2 $var_theme)
-    shift 2
-    ;;
-  -C | --conda)
-    flag_conda=$true
-    shift
-    ;;
-  disable_aliases)
-    flag_mode_aliases=$false
-    shift
-    ;;
-  disable_exports)
-    flag_mode_exports=$false
-    shift
-    ;;
-  disavle_functions)
-    flag_mode_functions=$false
-    shift
-    ;;
-  --)
-    shift
-    break
-    ;;
-  *)
-    echo "Error: Unknown option $1"
-    help
-    exit $false
-    ;;
-  esac
-done
+SHENV_HOME=${SHENV_HOME:="$HOME/.config/shell/"}
+SHENV_LOCAL=${SHENV_LOCAL:="$HOME/.config/shell/.local"}
+SHENV_ALIASES=${SHENV_ALIASES:=true}
+SHENV_EXPORTS=${SHENV_EXPORTS:=true}
+SHENV_FUNCTIONS=${SHENV_FUNCTIONS:=true}
+SHENV_THEMES=${SHENV_THEMES:=true}
+SHENV_INIT_CONDA=${SHENV_INIT_CONDA:=false}
 
 #source
-[[ $flag_mode_aliases == $true ]] && source "$HOME/.config/shell/aliases.sh"
-[[ $flag_mode_exports == $true ]] && source "$HOME/.config/shell/exports.sh"
-[[ $flag_mode_functions == $true ]] && source "$HOME/.config/shell/functions.sh"
+[[ $SHENV_ALIASES == "true" ]] && source "$SHENV_HOME/aliases.sh"
+[[ $SHENV_EXPORTS == "true" ]] && source "$SHENV_HOME/exports.sh"
+[[ $SHENV_FUNCTIONS == "true" ]] && source "$SHENV_HOME/functions.sh"
+[[ $SHENV_THEMES == "true" ]] && source "$SHENV_HOME/themes.sh"
 
-#ENVARS
-# >>> prompt initialize >>>
-export POSH_DISABLE_UPDATE=true
-[[ $var_prompt == "omp" ]] && eval "$(oh-my-posh init $var_shell --config ${_themes_}/oh-my-posh/oneiroi-${var_theme}.omp.json)"
+#local source
+[[ -f "$SHENV_LOCAL/aliases.sh" ]] && source "$SHENV_LOCAL/aliases.sh"
+[[ -f "$SHENV_LOCAL/exports.sh" ]] && source "$SHENV_LOCAL/exports.sh"
+[[ -f "$SHENV_LOCAL/functions.sh" ]] && source "$SHENV_LOCAL/functions.sh"
+[[ -f "$SHENV_LOCAL/themes.sh" ]] && source "$SHENV_LOCAL/themes.sh"
 
-export STARSHIP_CONFIG=${_themes_}/starship/oneiroi-${var_theme}.toml
-[[ $var_prompt == "starship" ]] && eval "$(starship init $var_shell)"
-# <<< prompt initialize <<<
+# >>> ENV INITIALIZE >>>
 
-eval "$(zoxide init bash)"
+command -v zoxide >/dev/null && eval "$(zoxide init $SHENV_SHELL)"
+command -v fzf >/dev/null && eval "$(fzf --$SHENV_SHELL)"
 
 # >>> conda initialize >>>
 export CONDA_HOME="$HOME/miniconda3/"
@@ -116,8 +40,8 @@ ci() {
   else
     export PATH="$CONDA_HOME/bin:$PATH"
   fi
-  echo "$(tput setaf 10)Conda环境已初始化，使用conda activate {env}激活$(tput sgr0)"
+  echo "$(tput setab 4)$(tput setaf 0)CONDA$(tput sgr0) use conda activate {env}"
 }
 
-[[ $flag_conda == $true ]] && ci
+[[ $SHENV_INIT_CONDA == "true" ]] && ci
 # <<< conda initialize <<<
