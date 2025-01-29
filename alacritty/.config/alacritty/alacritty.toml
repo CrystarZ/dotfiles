@@ -1,0 +1,22 @@
+general.import = ["~/Themes/oneiroi-theme/themes/alacritty/oneiroi-dream.toml"]
+
+[env]
+# TERM = 'xterm-256-color'
+
+[font]
+size = 8
+normal = { family = "JetBrainsMono Nerd font",style = "Regular" }
+builtin_box_drawing = false
+
+[window]
+padding = {x = 10,y = 5}
+decorations = "None"
+opacity = 0.8
+blur = true
+
+[cursor.style]
+blinking = "Always"
+
+[terminal.shell]
+program = "wsl"
+args = ["--cd" ,"~"]
