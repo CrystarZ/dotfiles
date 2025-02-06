@@ -7,7 +7,7 @@ You will need `git` and GNU `stow`
 Clone this repository
 
 ```bash
-git clone https://github.com/AEvaCrystar/dotfiles.git ./DotFiles
+git clone https://github.com/CrystarZ/dotfiles.git ./DotFiles
 cd ./DotFiles
 ```
 
