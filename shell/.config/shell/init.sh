@@ -12,6 +12,16 @@ SHENV_FUNCTIONS=${SHENV_FUNCTIONS:=true}
 SHENV_THEMES=${SHENV_THEMES:=true}
 SHENV_INIT_CONDA=${SHENV_INIT_CONDA:=false}
 
+#BREW
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-/home/linuxbrew/.linuxbrew}"
+[ -f "${HOMEBREW_PREFIX}/bin/brew" ] && eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+
+cmdv() {
+  command -v "$@" >/dev/null 2>&1
+}
+
 #source
 [[ $SHENV_ALIASES == "true" ]] && source "$SHENV_HOME/aliases.sh"
 [[ $SHENV_EXPORTS == "true" ]] && source "$SHENV_HOME/exports.sh"
@@ -26,8 +36,8 @@ SHENV_INIT_CONDA=${SHENV_INIT_CONDA:=false}
 
 # >>> ENV INITIALIZE >>>
 
-command -v zoxide >/dev/null && eval "$(zoxide init $SHENV_SHELL)"
-command -v fzf >/dev/null && eval "$(fzf --$SHENV_SHELL)"
+cmdv zoxide && eval "$(zoxide init $SHENV_SHELL)"
+cmdv fzf && eval "$(fzf --$SHENV_SHELL)"
 
 # >>> conda initialize >>>
 export CONDA_HOME="$HOME/miniconda3/"
