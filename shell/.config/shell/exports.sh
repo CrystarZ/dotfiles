@@ -6,9 +6,6 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 # export XDG_CURRENT_DESKTOP="Wayland"
 
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_ENV_HINTS=1
-
 #PATH
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.local/share/neovim/bin":$PATH
