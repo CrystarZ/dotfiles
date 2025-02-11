@@ -8,7 +8,8 @@ export MANWIDTH=999
 
 #PATH
 export PATH="$HOME/.local/bin":$PATH
-export PATH="$HOME/.local/share/neovim/bin":$PATH
+export PATH="$HOME/.local/share/nvim/bin":$PATH
+export PATH="$HOME/.local/share/nvim/mason/bin":$PATH
 export PATH="$HOME/.node_modules/.bin":$PATH
 
 export _rws_="$HOME/"
