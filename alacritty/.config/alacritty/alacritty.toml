@@ -10,6 +10,7 @@ builtin_box_drawing = false
 
 [window]
 padding = {x = 10,y = 5}
+dynamic_padding = true
 decorations = "None"
 opacity = 0.8
 blur = true
@@ -20,3 +21,9 @@ blinking = "Always"
 [terminal.shell]
 program = "wsl"
 args = ["--cd" ,"~"]
+
+[keyboard]
+bindings = [
+  { key = "Slash", mods = "Control", chars = "\u001f" },
+  { key= "Space", mods= "Control", chars= "\u0000" },
+]
