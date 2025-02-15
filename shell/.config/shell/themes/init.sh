@@ -6,7 +6,7 @@ theme() {
   eval "$p/main.sh" "$t" #main
   export SHENV_THEME=${t}
   sed -i -E --follow-symlinks "s|(export SHENV_THEME=).*|\1${t}|" "${HOME}/.zshrc"
-  sed -i -E --follow-symlinks "s|(export SHENV_THEME=).*|\2${t}|" "${HOME}/.bashrc"
+  sed -i -E --follow-symlinks "s|(export SHENV_THEME=).*|\1${t}|" "${HOME}/.bashrc"
   source ~/.config/shell/themes.sh #reload prompt
   tmux source ~/.tmux.conf         #reload tmux
 }

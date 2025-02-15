@@ -87,7 +87,7 @@ build() {
     relative_path="${packages#$HOME}"
     [[ $relative_path == /* ]] && relative_path="~$relative_path"
     alacritty_dfile=${alacritty_dfile:-$HOME/.config/alacritty/alacritty.toml}
-    alacritty_pattern=${alacritty_pattern:-"s|(general\.import =).*|\1 [\"${relative_path}alacritty/$theme-$plt.toml\"]|"}
+    alacritty_pattern=${alacritty_pattern:-"s|(general\.import =).*|\1 [\"${relative_path}/alacritty/$theme-$plt.toml\"]|"}
     set "$alacritty_pattern" "$alacritty_dfile"
     ;;
   tmux)
