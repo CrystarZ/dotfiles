@@ -12,12 +12,12 @@ export PATH="$HOME/.local/share/nvim/bin":$PATH
 export PATH="$HOME/.local/share/nvim/mason/bin":$PATH
 export PATH="$HOME/.node_modules/.bin":$PATH
 
-export _rws_="$HOME/"
-export _ws_="$HOME/WorkSpace/"
-export _configs_="$HOME/.config/"
-export _dfs_="${_rws_}DotFiles/"
-export _dfsl_="${_rws_}DotFiles.local/"
-export _themes_="${_rws_}Themes/oneiroi-theme/themes/"
+export _rws_="$HOME"
+export _ws_="$HOME/workspace"
+export _configs_="$HOME/.config"
+export _dfs_="${_rws_}/dotfiles"
+export _dfsl_="${_rws_}/dotfiles.local"
+export _themes_="${_rws_}/themes/oneiroi-theme/themes"
 
 case "$(uname -s)" in
 
