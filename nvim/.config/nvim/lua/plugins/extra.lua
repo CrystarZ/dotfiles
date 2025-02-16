@@ -4,9 +4,4 @@ return {
   { import = "lazyvim.plugins.extras.ui.treesitter-context" },
   { import = "lazyvim.plugins.extras.ui.smear-cursor" },
   -- { import = "lazyvim.plugins.extras.ui.edgy" },
-  --LANG
-  { import = "lazyvim.plugins.extras.lang.git" },
-  { import = "lazyvim.plugins.extras.lang.clangd" },
-  { import = "lazyvim.plugins.extras.lang.cmake" },
-  { import = "lazyvim.plugins.extras.lang.json" },
 }

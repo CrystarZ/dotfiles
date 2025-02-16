@@ -9,3 +9,5 @@ data
 
 /lazy-lock.json
 /lazyvim.json
+
+/lua/plugins/lang.lua
