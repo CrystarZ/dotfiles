@@ -29,10 +29,7 @@ cmdv() {
 [[ $SHENV_THEMES == "true" ]] && source "$SHENV_HOME/themes.sh"
 
 #local source
-[[ -f "$SHENV_LOCAL/aliases.sh" ]] && source "$SHENV_LOCAL/aliases.sh"
-[[ -f "$SHENV_LOCAL/exports.sh" ]] && source "$SHENV_LOCAL/exports.sh"
-[[ -f "$SHENV_LOCAL/functions.sh" ]] && source "$SHENV_LOCAL/functions.sh"
-[[ -f "$SHENV_LOCAL/themes.sh" ]] && source "$SHENV_LOCAL/themes.sh"
+[[ -f "$SHENV_LOCAL/init.sh" ]] && source "$SHENV_LOCAL/init.sh"
 
 # >>> ENV INITIALIZE >>>
 
