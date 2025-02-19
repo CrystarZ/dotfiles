@@ -13,10 +13,10 @@ cmdv rg && alias grep='rg --fixed-strings --color=auto'
 cmdv bat && alias cat='bat -pp'
 cmdv dust && alias du='dust' #ncdu?
 cmdv eza && alias tree='eza --tree --icons'
-cmdv fd && alias find='fd --hidden --follow --color=auto'
 cmdv tldr && alias mian='tldr' #mini-man
-cmdv procs && alias ps='procs --color=auto'
-cmdv curlie && alias curl='curlie --color=auto'
+cmdv curlie && alias curl='curlie'
+# cmdv procs && alias ps='procs --color=auto'
+# cmdv fd && alias find='fd --hidden --follow --color=auto'
 # cmdv choose && alias cut='choose'
 
 cmdv man && alias man='man -L zh_CN'
