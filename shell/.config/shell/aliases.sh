@@ -7,19 +7,10 @@ alias shrc='${EDITOR} ~/.config/shell/'
 alias zshrc='${EDITOR} ~/.zshrc'
 
 #modern tools
-# alias cd='z'
-cmdv eza && alias ls='eza --icons'
-cmdv rg && alias grep='rg --fixed-strings --color=auto'
 cmdv bat && alias cat='bat -pp'
-cmdv dust && alias du='dust' #ncdu?
+cmdv eza && alias ls='eza --icons'
 cmdv eza && alias tree='eza --tree --icons'
-cmdv tldr && alias mian='tldr' #mini-man
-cmdv curlie && alias curl='curlie'
-# cmdv procs && alias ps='procs --color=auto'
-# cmdv fd && alias find='fd --hidden --follow --color=auto'
-# cmdv choose && alias cut='choose'
-
-cmdv man && alias man='man -L zh_CN'
+#and more?
 
 alias ~='cd ~'
 alias ..='cd ..'
@@ -66,6 +57,11 @@ alias pscpu='procs|(read -r header && echo " $header" && sort -nr -k 4|head -n 5
 
 # systemd
 alias systemctl_list="systemctl list-unit-files --state=enabled"
+alias brewservice_list="brew services list"
+
+# stow
+alias stowa='stow -t $HOME */'
+alias stowe='sudo stow -t /etc etc'
 
 case "$(uname -s)" in
 
