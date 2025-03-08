@@ -12,10 +12,13 @@ cmdv eza && alias ls='eza --icons'
 cmdv eza && alias tree='eza --tree --icons'
 #and more?
 
+alias mux=tmuxinator
+
 alias ~='cd ~'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias :q='exit'
+alias c='clear'
 alias ll='ls -lh --git'
 alias la='ll -a'
 alias lt='ls -T'
