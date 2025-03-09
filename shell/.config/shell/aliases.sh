@@ -19,7 +19,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias :q='exit'
 alias c='clear'
-alias ll='ls -lh --git'
+alias ll='ls -lh'
 alias la='ll -a'
 alias lt='ls -T'
 alias v='vim'
@@ -28,6 +28,8 @@ alias vim='nvim'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+cmdv eza && alias ll='ls -lh --git'
+cmdv nvim && alias vim='nvim'
 
 # disk
 alias df='df -h'
