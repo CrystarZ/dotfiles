@@ -1,20 +1,15 @@
 #!/bin/sh
 
 batch() {
-  [ $# -lt 2 ] && echo "Usage: batch <path> <file> <func>" && return 1
-  local spath="$1"
-  local file="$2"
-  shift 2
-  local func="$@"
-  find "$spath" -name "$file" | xargs -I{} sh -c "$func"
+  [ $# -lt 1 ] && echo "Usage: batch <file> <func>" && return 1
+  local file="$1"
+  shift 1
+
+  local func=${@:-echo {}}
+  find . -type f -name "$file" -exec bash -c "$func" \;
 }
 
-purename() { #basename without filename extension
+ext() { #get file extension
   local f="$(basename "$@")"
-  echo "$f" | awk -F "." '{print $1}'
-}
-
-dpname() { # dirname/purename
-  local f="$@"
-  echo $(dirname "$f")/$(purename "$f")
+  echo ${f#*.}
 }
