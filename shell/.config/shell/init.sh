@@ -37,7 +37,7 @@ cmdv zoxide && eval "$(zoxide init $SHENV_SHELL)"
 cmdv fzf && eval "$(fzf --$SHENV_SHELL)"
 
 # >>> conda initialize >>>
-export CONDA_HOME="$HOME/miniconda3/"
+export CONDA_HOME="${CONDA_HOME:-$HOME/miniconda3}"
 
 ci() {
   if [ -f "$CONDA_HOME/etc/profile.d/conda.sh" ]; then
