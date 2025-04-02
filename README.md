@@ -1,5 +1,7 @@
 # dotfiles
 
+![profile.png](./profile.png)
+
 ## Installing
 
 You will need `git` and GNU `stow`
@@ -17,6 +19,7 @@ Run `stow` to symlink everything or just select what you want
 stow -t $HOME */ # Everything (the '/' ignores the README)
 stow -t $HOME -D .git
 ```
+
 or
 
 ```bash
