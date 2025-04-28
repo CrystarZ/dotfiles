@@ -5,7 +5,6 @@ export SHENV_THEME=${SHENV_THEME:="oneiroi-dream"}                      #theme =
 export SHENV_PROMPT=${SHENV_PROMPT:="starship"}                         #prompt = none|omp|starship"
 
 SHENV_HOME=${SHENV_HOME:="$HOME/.config/shell/"}
-SHENV_LOCAL=${SHENV_LOCAL:="$HOME/.config/shell/.local"}
 SHENV_ALIASES=${SHENV_ALIASES:=true}
 SHENV_EXPORTS=${SHENV_EXPORTS:=true}
 SHENV_FUNCTIONS=${SHENV_FUNCTIONS:=true}
@@ -27,9 +26,6 @@ cmdv() {
 [[ $SHENV_EXPORTS == "true" ]] && source "$SHENV_HOME/exports.sh"
 [[ $SHENV_FUNCTIONS == "true" ]] && source "$SHENV_HOME/functions.sh"
 [[ $SHENV_THEMES == "true" ]] && source "$SHENV_HOME/themes.sh"
-
-#local source
-[[ -f "$SHENV_LOCAL/init.sh" ]] && source "$SHENV_LOCAL/init.sh"
 
 # >>> ENV INITIALIZE >>>
 

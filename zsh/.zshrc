@@ -26,4 +26,5 @@ bindkey '^J' history-substring-search-down
 
 export SHENV_SHELL=zsh
 export SHENV_THEME=oneiroi-dream
+[ -f "$HOME/.profile.local" ] && . "$HOME/.profile.local"
 source "$HOME/.config/shell/init.sh"
