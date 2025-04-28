@@ -1,7 +1,5 @@
 #!/bin/sh
 alias hosts='${EDITOR} /etc/hosts'
-alias dfrc='${EDITOR} $_dfs_'
-alias thmrc='${EDITOR} $_themes_'
 alias nvimrc='${EDITOR} ~/.config/nvim/'
 alias shrc='${EDITOR} ~/.config/shell/'
 alias zshrc='${EDITOR} ~/.zshrc'
