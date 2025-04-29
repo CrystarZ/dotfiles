@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ -f "$HOME/.profile.local" ] && . "$HOME/.profile.local"
+
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -9,7 +11,6 @@ unset PROMPT
 unset ZAP_THEME
 export ZAP_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zap"
 [ -f "$ZAP_DIR/zap.zsh" ] && source "$ZAP_DIR/zap.zsh"
-
 
 # plugins
 plug "esc/conda-zsh-completion"
@@ -26,5 +27,4 @@ bindkey '^J' history-substring-search-down
 
 export SHENV_SHELL=zsh
 export SHENV_THEME=oneiroi-dream
-[ -f "$HOME/.profile.local" ] && . "$HOME/.profile.local"
 source "$HOME/.config/shell/init.sh"
