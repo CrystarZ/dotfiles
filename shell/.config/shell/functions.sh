@@ -11,5 +11,5 @@ batch() {
 
 ext() { #get file extension
   local f="$(basename "$@")"
-  echo ${f#*.}
+  echo ${f##*.}
 }
