@@ -35,6 +35,8 @@ alias free='free -m'
 
 #git
 alias g='lazygit'
+alias gi="git init"
+alias gcl="git clone"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
@@ -43,7 +45,7 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias gbd="git branch -d"
 alias gp="git push"
-alias gpl="git pull"
+alias gu="git pull"
 alias gl="git log --oneline --graph --decorate --all"
 alias gd="git diff"
 alias gdc="git diff --cached"
