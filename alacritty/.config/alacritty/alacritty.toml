@@ -1,4 +1,4 @@
-general.import = ["~/themes/oneiroi-theme/themes/alacritty/oneiroi-dream.toml"]
+general.import = ["~/.config/alacritty/themes/themes/oneiroi-dream.toml"]
 
 [env]
 # TERM = 'xterm-256-color'
