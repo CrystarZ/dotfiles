@@ -15,6 +15,7 @@ cmdv() {
 
 # >>> ENV INITIALIZE >>>
 
+. "$SHENV_HOME/pkgs/nix.sh"
 . "$SHENV_HOME/pkgs/brew.sh"
 . "$SHENV_HOME/pkgs/conda.sh"
 . "$SHENV_HOME/pkgs/prompt.sh"
