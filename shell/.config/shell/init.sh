@@ -8,43 +8,21 @@ SHENV_HOME=${SHENV_HOME:="$HOME/.config/shell/"}
 SHENV_ALIASES=${SHENV_ALIASES:=true}
 SHENV_EXPORTS=${SHENV_EXPORTS:=true}
 SHENV_FUNCTIONS=${SHENV_FUNCTIONS:=true}
-SHENV_THEMES=${SHENV_THEMES:=true}
-SHENV_INIT_CONDA=${SHENV_INIT_CONDA:=false}
-
-#BREW
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-/home/linuxbrew/.linuxbrew}"
-[ -f "${HOMEBREW_PREFIX}/bin/brew" ] && eval "$("${HOMEBREW_PREFIX}/bin/brew" shellenv)"
 
 cmdv() {
   command -v "$@" >/dev/null 2>&1
 }
 
-#source
-[ "$SHENV_ALIASES" = "true" ] && . "$SHENV_HOME/aliases.sh"
-[ "$SHENV_EXPORTS" = "true" ] && . "$SHENV_HOME/exports.sh"
-[ "$SHENV_FUNCTIONS" = "true" ] && . "$SHENV_HOME/functions.sh"
-[ "$SHENV_THEMES" = "true" ] && . "$SHENV_HOME/themes.sh"
-
 # >>> ENV INITIALIZE >>>
+
+. "$SHENV_HOME/pkgs/brew.sh"
+. "$SHENV_HOME/pkgs/conda.sh"
+. "$SHENV_HOME/pkgs/prompt.sh"
 
 cmdv zoxide && eval "$(zoxide init "$SHENV_SHELL")"
 cmdv fzf && eval "$(fzf --"$SHENV_SHELL")"
 
-# >>> conda initialize >>>
-export CONDA_HOME="${CONDA_HOME:-$HOME/miniconda3}"
-
-ci() {
-  if [ -f "$CONDA_HOME/etc/profile.d/conda.sh" ]; then
-    . "$CONDA_HOME/etc/profile.d/conda.sh"
-    export CONDA_PROMPT_MODIFIER="($CONDA_DEFAULT_ENV)"
-    export CONDA_CHANGEPS1="no"
-  else
-    export PATH="$CONDA_HOME/bin:$PATH"
-  fi
-  echo "$(tput setab 4)$(tput setaf 0)CONDA$(tput sgr0) use conda activate {env}"
-}
-
-[ "$SHENV_INIT_CONDA" = "true" ] && ci
-# <<< conda initialize <<<
+#source
+[ "$SHENV_ALIASES" = "true" ] && . "$SHENV_HOME/aliases.sh"
+[ "$SHENV_EXPORTS" = "true" ] && . "$SHENV_HOME/exports.sh"
+[ "$SHENV_FUNCTIONS" = "true" ] && . "$SHENV_HOME/functions.sh"
