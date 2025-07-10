@@ -1,8 +1,6 @@
 #!/bin/sh
 
 export SHENV_SHELL="${SHENV_SHELL:=$(basename "$(readlink /proc/$$/exe)")}" #shell = bash|zsh
-export SHENV_THEME="${SHENV_THEME:="oneiroi-dream"}"                        #theme = oneiroi-dream|oneiroi-melatonin
-export SHENV_PROMPT="${SHENV_PROMPT:="starship"}"                           #prompt = none|omp|starship"
 
 SHENV_HOME=${SHENV_HOME:="$HOME/.config/shell/"}
 SHENV_ALIASES=${SHENV_ALIASES:=true}

@@ -28,6 +28,4 @@ bindkey '^ ' autosuggest-accept
 bindkey '^K' history-substring-search-up
 bindkey '^J' history-substring-search-down
 
-export SHENV_SHELL=zsh
-export SHENV_THEME=oneiroi-dream
 source "$HOME/.config/shell/init.sh"
