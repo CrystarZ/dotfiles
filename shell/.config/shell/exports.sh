@@ -10,7 +10,7 @@ export MANWIDTH=999
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-export PATH="$HOME/.node_modules/.bin:$PATH"
+export PATH="$HOME/.local/share/node_modules/bin:$PATH"
 
 case "$(uname -s)" in
 
