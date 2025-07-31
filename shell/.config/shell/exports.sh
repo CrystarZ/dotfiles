@@ -1,5 +1,6 @@
 #!/bin/sh
 export EDITOR="nvim"
+export TERM=xterm-256color
 export TERMINAL="wezterm"
 export BROWSER="firefox"
 export MANPAGER='nvim +Man!'
