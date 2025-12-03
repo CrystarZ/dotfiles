@@ -1,10 +1,10 @@
-general.import = ["~/.config/alacritty/themes/themes/oneiroi-dream.toml"]
+general.import = ["~/.config/alacritty/themes/themes/oneiroi-melatonin.toml"]
 
 [env]
 # TERM = 'xterm-256-color'
 
 [font]
-size = 8
+size = 10
 normal = { family = "JetBrainsMono Nerd font",style = "Regular" }
 builtin_box_drawing = false
 
@@ -12,15 +12,11 @@ builtin_box_drawing = false
 padding = {x = 10,y = 5}
 dynamic_padding = true
 decorations = "None"
-opacity = 0.8
+opacity = 1
 blur = true
 
 [cursor.style]
 blinking = "Always"
-
-[terminal.shell]
-program = "wsl"
-args = ["--cd" ,"~"]
 
 [keyboard]
 bindings = [
