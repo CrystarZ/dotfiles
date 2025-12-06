@@ -4,12 +4,6 @@ alias nvimrc='${EDITOR} ~/.config/nvim/'
 alias shrc='${EDITOR} ~/.config/shell/'
 alias zshrc='${EDITOR} ~/.zshrc'
 
-#modern tools
-cmdv bat && alias cat='bat -pp'
-cmdv eza && alias ls='eza --icons'
-cmdv eza && alias tree='eza --tree --icons'
-#and more?
-
 alias mux=tmuxinator
 
 alias ~='cd ~'
@@ -17,17 +11,19 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias :q='exit'
 alias c='clear'
-alias ll='ls -lh'
-alias la='ll -a'
-alias lt='ls -T'
-alias v='vim'
-alias vi='vim'
-alias vim='nvim'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-cmdv eza && alias ll='ls -lh --git'
+alias v='vim'
+alias vi='vim'
 cmdv nvim && alias vim='nvim'
+cmdv bat && alias cat='bat -pp'
+cmdv eza && alias ls="eza --icons --time-style +%Y-%m-%d\ %H:%M:%S"
+alias ll="ls -lh"
+alias la="ll -a"
+alias lg="la --git"
+alias lt="ls -T"
+alias tree="ls -T"
 
 # disk
 alias df='df -h'
