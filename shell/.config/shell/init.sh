@@ -17,6 +17,7 @@ cmdv() {
 . "$SHENV_HOME/pkgs/brew.sh"
 . "$SHENV_HOME/pkgs/conda.sh"
 . "$SHENV_HOME/pkgs/prompt.sh"
+. "$SHENV_HOME/pkgs/pyenv.sh"
 
 cmdv zoxide && eval "$(zoxide init "$SHENV_SHELL")"
 cmdv fzf && eval "$(fzf --"$SHENV_SHELL")"
