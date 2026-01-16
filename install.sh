@@ -98,7 +98,7 @@ clean_conflicts() {
 
   local conflicts=$(
     stow -n -v --dir="$PREFIX" --target="$TARGET" "$pkg" 2>&1 |
-      grep -Eo "existing target.*" | awk '{print $NF}' || true
+      grep -oP 'existing target \K\S+' || true
   )
 
   if [ -z "$conflicts" ]; then
