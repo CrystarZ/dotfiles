@@ -18,6 +18,7 @@ cmdv() {
 . "$SHENV_HOME/pkgs/conda.sh"
 . "$SHENV_HOME/pkgs/prompt.sh"
 . "$SHENV_HOME/pkgs/pyenv.sh"
+. "$SHENV_HOME/pkgs/ssh-agent.sh"
 
 export PATH="$HOME/.local/bin:$PATH"
 cmdv zoxide && eval "$(zoxide init "$SHENV_SHELL")"
