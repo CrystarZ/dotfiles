@@ -19,6 +19,7 @@ cmdv() {
 . "$SHENV_HOME/pkgs/prompt.sh"
 . "$SHENV_HOME/pkgs/pyenv.sh"
 
+export PATH="$HOME/.local/bin:$PATH"
 cmdv zoxide && eval "$(zoxide init "$SHENV_SHELL")"
 cmdv fzf && eval "$(fzf --"$SHENV_SHELL")"
 
