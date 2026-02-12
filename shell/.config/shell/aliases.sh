@@ -61,8 +61,8 @@ alias systemctl_list="systemctl list-unit-files --state=enabled"
 alias brewservice_list="brew services list"
 
 # stow
-alias stowa='stow -t $HOME */'
-alias stowe='sudo stow -t /etc etc'
+alias stowa='stow -t $HOME'
+alias stowe='sudo stow -t /etc'
 
 case "$(uname -s)" in
 
