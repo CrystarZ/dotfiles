@@ -54,15 +54,15 @@ let mapleader = " "
 let maplocalleader = " "
 
 " Better up/down (gj gk)
-nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
-xnoremap <expr> j v:count == 0 ? 'gj' : 'j'
-nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
-xnoremap <expr> k v:count == 0 ? 'gk' : 'k'
-
-nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
-xnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
-nnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
-xnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
+" nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+" xnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+" nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+" xnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+"
+" nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
+" xnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
+" nnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
+" xnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
 
 " Window navigation
 nnoremap <C-h> <C-w>h
@@ -172,4 +172,16 @@ if has("persistent_undo")
   set undodir=~/.vim/undo//
 endif
 
-colorscheme default
+" 全选/复制/粘贴
+nnoremap <leader>a ggVG
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+inoremap <leader>p <Esc>"+pa
+
+" C-s 保存
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+
+nnoremap <C-f> /
+
+colorscheme habamax
