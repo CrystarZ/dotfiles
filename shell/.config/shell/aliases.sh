@@ -52,6 +52,25 @@ alias gfm="git fetch origin main"
 alias grh="git reset --hard"
 alias grs="git reset --soft HEAD^"
 
+# docker
+alias d='docker'
+alias dc='docker compose'
+alias dps='docker ps'
+alias dpa='docker ps -a'
+alias dr='docker run'
+alias dex='docker exec -it'
+alias dstop='docker stop'
+alias dstart='docker start'
+alias drm='docker rm'
+alias di='docker images'
+alias drmi='docker rmi'
+alias dlog='docker logs -f'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcb='docker compose build'
+alias dcl='docker compose logs -f'
+alias dprune='docker system prune -f'
+
 #procs
 alias psmem='procs|(read -r header && echo " $header" && sort -nr -k 5|head -n 5)'
 alias pscpu='procs|(read -r header && echo " $header" && sort -nr -k 4|head -n 5)'
