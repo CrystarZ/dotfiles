@@ -1,5 +1,5 @@
 #!/bin/sh
-alias hosts='${EDITOR} /etc/hosts'
+alias hosts='sudo ${EDITOR} /etc/hosts'
 alias nvimrc='${EDITOR} ~/.config/nvim/'
 alias shrc='${EDITOR} ~/.config/shell/'
 alias zshrc='${EDITOR} ~/.zshrc'
