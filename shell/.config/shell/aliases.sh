@@ -1,8 +1,9 @@
 #!/bin/sh
-alias hosts='sudo ${EDITOR} /etc/hosts'
-alias nvimrc='${EDITOR} ~/.config/nvim/'
-alias shrc='${EDITOR} ~/.config/shell/'
-alias zshrc='${EDITOR} ~/.zshrc'
+alias hosts="sudo ${EDITOR} /etc/hosts"
+alias fstab="sudo ${EDITOR} /etc/fstab"
+alias nvimrc="${EDITOR} ~/.config/nvim/"
+alias shrc="${EDITOR} ~/.config/shell/"
+alias zshrc="${EDITOR} ~/.zshrc"
 
 alias mux=tmuxinator
 

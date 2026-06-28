@@ -1,11 +1,8 @@
 #!/bin/sh
 export EDITOR="vim"
 export TERM=xterm-256color
-export TERMINAL="wezterm"
-export BROWSER="firefox"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
-# export XDG_CURRENT_DESKTOP="Wayland"
 
 #PATH
 export PATH="$HOME/.local/bin:$PATH"

@@ -25,6 +25,6 @@ cmdv zoxide && eval "$(zoxide init "$SHENV_SHELL")"
 cmdv fzf && eval "$(fzf --"$SHENV_SHELL")"
 
 #source
-[ "$SHENV_ALIASES" = "true" ] && . "$SHENV_HOME/aliases.sh"
 [ "$SHENV_EXPORTS" = "true" ] && . "$SHENV_HOME/exports.sh"
+[ "$SHENV_ALIASES" = "true" ] && . "$SHENV_HOME/aliases.sh"
 [ "$SHENV_FUNCTIONS" = "true" ] && . "$SHENV_HOME/functions.sh"
