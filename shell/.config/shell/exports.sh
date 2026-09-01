@@ -1,6 +1,6 @@
 #!/bin/sh
 export EDITOR="vim"
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
