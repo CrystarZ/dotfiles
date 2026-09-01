@@ -5,8 +5,9 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      style = "dream",
+      style = "melatonin",
       transparent = true,
+      no_ui = true,
     },
   },
   {
