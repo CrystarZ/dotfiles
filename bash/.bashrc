@@ -4,7 +4,10 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-export PS1='\[\e[33m\]\u\[\e[31m\]@\h\[\e[0m\] \[\e[33m\]\w\[\e[0m\] \[\e[37m\]>\[\e[0m\] '
+HOSTCOLOR='\e[1;91m'
+DIRCOLOR='\e[36m'
+ENDCOLOR='\e[0m'
+export PS1="$HOSTCOLOR\h$ENDCOLOR:$DIRCOLOR\w$ENDCOLOR:\$ "
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'

@@ -7,7 +7,10 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-unset PROMPT
+HOSTCOLOR=$'\e[1;91m'
+DIRCOLOR=$'\e[36m'
+ENDCOLOR=$'\e[0m'
+export PROMPT="$HOSTCOLOR%m$ENDCOLOR:$DIRCOLOR%~$ENDCOLOR:%# "
 unset ZAP_THEME
 export ZAP_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zap"
 [ -f "$ZAP_DIR/zap.zsh" ] && source "$ZAP_DIR/zap.zsh"
